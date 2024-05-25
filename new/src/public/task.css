@@ -1,0 +1,537 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+.nav-bar {
+  display: flex;
+  height: 13vh;
+  background-color: rgb(30, 127, 238);
+}
+.nav-bar h2 {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: white;
+}
+.nav-bar .user {
+  display: flex;
+  margin-left: 1080px;
+  flex-direction: row;
+}
+.notifications {
+  display: flex;
+  margin-left: 1350px;
+  margin-top: -60px;
+}
+.notifications ion-icon {
+  display: flex;
+  font-size: 28px;
+  color: white;
+}
+.notification-badge {
+  display: inline-block;
+  margin-top: -50px;
+  margin-left: 5px;
+  background-color: green;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+.nav-bar .user ion-icon {
+  margin-top: 20px;
+  gap: 10px;
+  font-size: 38px;
+  color: white;
+}
+.nav-bar h3 {
+  display: flex;
+
+  margin-top: 30px;
+  color: white;
+  font-weight: bold;
+}
+.side-bar {
+  display: flex;
+  width: 22%;
+  height: 60vh;
+  background-color: rgb(34, 122, 236);
+  margin-top: -1px;
+  border-bottom-right-radius: 13px;
+}
+
+.side-bar .links nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+.side-bar .links nav ul {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.side-bar .links nav ul li {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.side-bar .links nav ul li a {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+.side-bar .links nav ul li a span {
+  background-color: white;
+  padding: 1px 6px;
+  border-radius: 20px;
+  color: black;
+}
+
+.side-bar .links nav ul li a:hover,
+.side-bar .links nav ul li a.active {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  width: 150%;
+  height: 4vh;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -40px;
+  margin-left: -20px;
+}
+.content .card1 {
+  display: flex;
+  width: 23%;
+  height: 27vh;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.247);
+  border-radius: 14px;
+  margin-left: 370px;
+  margin-top: -620px;
+}
+.content .card1 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  margin-left: 40px;
+  margin-top: -70px;
+}
+.content .card1 span {
+  display: flex;
+  margin-top: 100px;
+  margin-left: -100px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+}
+.content .card1 ion-icon {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 15px;
+  font-size: 48px;
+  color: rgb(30, 127, 238);
+}
+.content .card2 {
+  display: flex;
+  width: 23%;
+  height: 27vh;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.247);
+  border-radius: 14px;
+  margin-right: 10px;
+  margin-top: -620px;
+}
+.content .card2 span {
+  display: flex;
+  margin-top: 100px;
+  margin-left: -140px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+}
+.content .card2 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  margin-left: 40px;
+  margin-top: -70px;
+}
+.content .card2 ion-icon {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 15px;
+  font-size: 48px;
+  color: rgb(30, 127, 238);
+}
+.content .card3 {
+  display: flex;
+  width: 23%;
+  height: 27vh;
+  background-color: white;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.247);
+  border-radius: 14px;
+  margin-top: -620px;
+  margin-right: 10px;
+}
+.content .card3 .high span {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+}
+.content .card3 .low span {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+}
+.content .card3 p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  margin-left: 40px;
+  margin-top: -70px;
+}
+.content .card3 ion-icon {
+  display: flex;
+  margin-top: 30px;
+  margin-left: 15px;
+  font-size: 48px;
+  color: rgb(30, 127, 238);
+}
+.content .card3 .high {
+  display: flex;
+  margin-top: 60px;
+  margin-left: -200px;
+}
+.content .card3 .high ion-icon {
+  color: rgb(15, 211, 15);
+  font-size: 38px;
+}
+.content .card3 .low {
+  display: flex;
+  margin-top: 60px;
+  margin-left: 80px;
+}
+.content .card3 .low ion-icon {
+  color: rgb(212, 43, 43);
+  font-size: 38px;
+}
+.add-button {
+  display: flex;
+  margin-left: 350px;
+  margin-top: -380px;
+  width: 30%;
+  padding: 15px;
+  background-color: white;
+  border: none;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.158);
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  cursor: pointer;
+}
+.add-button ion-icon {
+  color: rgb(30, 127, 238);
+}
+.form {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  width: 55%;
+  height: 14vh;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.288);
+  border-radius: 14px;
+  margin-left: 350px;
+  margin-top: 45px;
+}
+.form form .in1 {
+  width: 55%;
+  height: 6vh;
+  border: 2px solid white;
+  border-radius: 16px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  margin-left: 10px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+.form form select {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  outline: none;
+  background-color: transparent;
+}
+.form form .in2 {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  outline: none;
+  background-color: transparent;
+}
+.form form button {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  margin-left: 720px;
+  margin-top: -40px;
+  cursor: pointer;
+}
+.form form button ion-icon {
+  color: rgb(30, 127, 238);
+  font-size: 38px;
+}
+.tasks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: -480px;
+  margin-left: -200px;
+}
+.tasks ul li {
+  display: flex;
+  list-style: none;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.288);
+  margin: 10px;
+  height: 6vh;
+  border-radius: 16px;
+  padding: 10px;
+  margin-left: 440px;
+}
+.tasks ul li .completed {
+  display: flex;
+  background-color: transparent;
+  border: none;
+}
+.tasks ul li .completed ion-icon {
+  font-size: 38px;
+  color: rgb(15, 211, 15);
+}
+.tasks ul li .remove {
+  display: flex;
+  background-color: transparent;
+  border: none;
+}
+.tasks ul li .remove ion-icon {
+  font-size: 38px;
+  color: rgb(212, 43, 43);
+}
+.User {
+  display: flex;
+  width: 22%;
+  height: 40vh;
+  background-color: rgb(34, 122, 236);
+  margin-top: 0px;
+  border-top-right-radius: 13px;
+}
+.User a {
+  display: flex;
+  margin-top: 140px;
+  text-decoration: none;
+  margin-left: 30px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+}
+.User ion-icon {
+  margin-top: -3px;
+  font-size: 28px;
+}
+.User button {
+  display: flex;
+  height: 7vh;
+  display: flex;
+  margin-top: 60px;
+  margin-left: -80px;
+  background-color: white;
+  width: 15%;
+
+  border-radius: 15px;
+  border: none;
+  align-items: center;
+  text-align: center;
+}
+
+.dark-theme {
+  background-color: #333333;
+  color: #fff;
+}
+
+.dark-theme .nav-bar {
+  background-color: #2e2e2e;
+}
+
+.dark-theme .side-bar {
+  background-color: #2c2c2c;
+}
+
+.dark-theme .content {
+  background-color: #666;
+}
+.dark-theme .User {
+  background-color: #666;
+}
+
+.dark-theme .card1,
+.dark-theme .card2,
+.dark-theme .card3 {
+  background-color: #f71390ee;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.dark-theme .content .card3 .low ion-icon {
+  color: rgb(255, 39, 39);
+  font-size: 38px;
+}
+.dark-theme .card1 ion-icon,
+.dark-theme .card2 ion-icon,
+.dark-theme .card3 ion-icon {
+  color: white;
+}
+
+.dark-theme.add-button {
+  background-color: #888;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme.form {
+  background-color: #999;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme.tasks ul li {
+  background-color: #aaa;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .User {
+  background-color: #2c2c2c;
+}
+.dark-theme .User a {
+  margin-top: 140px;
+}
+.dark-theme .User button {
+  display: flex;
+  margin-top: 60px;
+  margin-left: -80px;
+  background-color: #f71390ec;
+  width: 15%;
+
+  border-radius: 15px;
+  border: none;
+  align-items: center;
+  text-align: center;
+}
+
+.dark-theme .User ion-icon {
+  color: black;
+}
+.dark-theme .side-bar .links nav ul li a {
+  color: #f71390ec;
+}
+
+.dark-theme .side-bar .links nav ul li a:hover,
+.dark-theme .side-bar .links nav ul li a.active {
+  background-color: #f71390ec;
+  color: white;
+  padding: 10px 15px;
+  width: 150%;
+  height: 4vh;
+  text-align: center;
+  border-radius: 15px;
+}
+.dark-theme .side-bar .links nav ul li a span {
+  background-color: #f71390ec;
+  padding: 1px 6px;
+  border-radius: 20px;
+  color: white;
+}
+.dark-theme .nav-bar h2 span {
+  margin-left: 15px;
+  margin-top: 30px;
+  color: #f71390ec;
+}
+.dark-theme .nav-bar .user ion-icon {
+  margin-top: 20px;
+  gap: 10px;
+  font-size: 38px;
+  color: #f71390ec;
+}
+.dark-theme .add-button {
+  display: flex;
+  margin-left: 350px;
+  margin-top: -380px;
+  width: 30%;
+  padding: 15px;
+  background-color: #f71390ec;
+  border: none;
+  color: white;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.158);
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  cursor: pointer;
+}
+.dark-theme .add-button ion-icon {
+  color: white;
+}
+.dark-theme .form {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #f71390ec;
+  width: 55%;
+  height: 14vh;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.288);
+  border-radius: 14px;
+  margin-left: 350px;
+  margin-top: 45px;
+}
+.dark-theme .form form select {
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  outline: none;
+  background-color: transparent;
+}
+.dark-theme .form form select option {
+  background-color: #f71390ec;
+}
+.dark-theme .form form .in2 {
+  color: white;
+  font-size: 18px;
+}
+.dark-theme .form form ion-icon {
+  color: white;
+}

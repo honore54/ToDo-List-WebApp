@@ -1,0 +1,125 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/task.css" />
+  </head>
+  <body>
+    <div class="side-bar">
+      <div class="title">
+        <h2>ToDo Dashboard</h2>
+      </div>
+      <div class="card-user">
+        <ion-icon name="person-circle"></ion-icon>
+        <div class="user-name">
+          <h3><%= username %></h3>
+        </div>
+        <div class="user-email">
+          <p><%= email %></p>
+        </div>
+      </div>
+      <div class="links">
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><ion-icon name="add-circle"></ion-icon>Add Task</a>
+              <a href="#"><ion-icon name="albums"></ion-icon>Task</a>
+              <a href="#"><ion-icon name="trash"></ion-icon>Remove Tasks</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card1">
+        <p>All Task</p>
+        <ion-icon name="file-tray-full"></ion-icon>
+      </div>
+      <div class="card2">
+        <p>Completed</p>
+        <ion-icon name="checkmark-circle"></ion-icon>
+      </div>
+      <div class="card3">
+        <p>Priority</p>
+        <ion-icon name="alert-circle"></ion-icon>
+        <div class="high">
+          <ion-icon name="arrow-up-circle"></ion-icon>
+        </div>
+        <div class="low">
+          <ion-icon name="arrow-down-circle"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+     <div class="form">
+      <form action="/addtask" method="post">
+        <input type="text" name="task" placeholder="Enter task" class="in1" />
+        <select name="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <input
+          type="date"
+          name="dueDate"
+          placeholder="Enter due date"
+          class="in2"
+        />
+        <button type="submit">Add task</button>
+      </form>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+        <script>
+      function markAsCompleted(id) {
+        fetch("/complete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id }),
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+
+      function removeTodo(id) {
+        fetch("/remove", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id }),
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+    </script>
+  </body>
+</html> -->

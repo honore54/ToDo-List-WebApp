@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskTrove</title>
+    <link rel="shortcut icon" href="laptop-v.png" type="image/x-icon" />
+    <link rel="stylesheet" href="landing.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar" id="navbar">
+      <span
+        ><p class="title">Task</p>
+        Trove</span
+      >
+      <nav>
+        <ul>
+          <li>
+            <a href="#about">About</a>
+            <a href="#advantage">Advantages</a>
+            <a href="#contact">Contact Us</a>
+          </li>
+          <div class="btn">
+            <button class="log"><a href="/login">Login</a></button>
+          </div>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap">
+      <img src="mobile-v.png" alt="mobile-v" class="im1" srcset="" />
+      <img src="laptop-v.png" alt="laptop-v" class="im2" srcset="" />
+      <script src="index.js"></script>
+    </div>
+    <div class="text">
+      <span
+        >Welcome on Our TODO Platform!<br />Our aim is to help you<br />To
+        Schedule your Day.</span
+      ><br />
+      <button>
+        <a href="/index" style="text-decoration: none; color: white"
+          >Get started</a
+        >
+      </button>
+    </div>
+    <section class="About" id="about">
+      <div class="title">
+        <span>Our&nbsp;Mission</span>
+      </div>
+      <div class="images">
+        <img src="laptop-v.png" alt="laptop-v" class="im2" srcset="" />
+      </div>
+      <div class="description">
+        <span
+          >we're driven by a singular mission to empower individuals to achieve
+          their goals with ease and efficiency.<br />
+          We understand the challenges of modern life – the overwhelming
+          tasks,<br />
+          the competing priorities, and the constant juggle of
+          responsibilities.<br />
+          That's why we've crafted a tool that simplifies task management and
+          enhances productivity.<br />With our intuitive Todo List WebApp, users
+          can streamline their daily routines,<br />
+          prioritize tasks effectively, and stay focused on what matters
+          most.</span
+        >
+      </div>
+    </section>
+    <section class="advantage" id="advantage">
+      <div class="title">
+        <span
+          >Why Use&nbsp;
+          <p class="col">Task</p>
+          Trove?</span
+        >
+      </div>
+      <div class="text">
+        <div class="icon">
+          <ion-icon name="shield-checkmark"></ion-icon>
+        </div>
+        <div class="benefit">
+          <p>
+            TaskTrove offers a seamless task management experience, allowing
+            users to effortlessly streamline their to-dos.<br />
+            With intuitive functionality to add, update, delete, and mark tasks
+            as completed,<br />
+            organizing your workload has never been easier. Prioritizing tasks
+            by urgency – whether high, low, or medium – is a breeze,
+            <br />ensuring you stay focused and on track with your goals. Boost
+            your productivity instantly with the ability to access<br />
+            your to-dos anytime, anywhere, empowering you to tackle tasks
+            efficiently and effectively.
+          </p>
+        </div>
+      </div>
+      <div class="do">
+        <span
+          >Things you can do with&nbsp;
+          <p class="d1">Task</p>
+          Trove</span
+        >
+      </div>
+      <div class="card1">
+        <div class="icon">
+          <ion-icon name="add-circle"></ion-icon>
+        </div>
+        <span>Add Tasks</span>
+      </div>
+      <div class="card2">
+        <div class="icon">
+          <ion-icon name="create"></ion-icon>
+        </div>
+        <span>Update</span>
+      </div>
+      <div class="card3">
+        <div class="icon">
+          <ion-icon name="trash"></ion-icon>
+        </div>
+        <span>Delete</span>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <span>Get in Touch</span>
+      <div class="message">
+        <p>
+          If you have any questions or feedback, feel free to reach out to us
+          via email:
+        </p>
+        <div class="link">
+          <a href="mailto:honoremugisha54@gmail.com"> Send us an Email </a>
+          <ion-icon name="mail"></ion-icon>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2024 TaskTrove. All rights reserved.</p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 70 ||
+          document.documentElement.scrollTop > 70
+        ) {
+          document.getElementById("navbar").classList.add("sticky");
+        } else {
+          document.getElementById("navbar").classList.remove("sticky");
+        }
+      }
+
+      gsap.from(".wrap", 1, {
+        opacity: 0,
+        duration: 1,
+        x: 50,
+        delay: 0.5,
+      });
+
+      function animateAbout() {
+        gsap.from("#about", 1, {
+          opacity: 0,
+          duration: 1,
+          y: -50,
+          delay: 0.5,
+        });
+      }
+      document
+        .querySelector("a[href='#about']")
+        .addEventListener("click", animateAbout);
+
+      function animateAdvantage() {
+        gsap.from("#advantage", 1, {
+          opacity: 0,
+          duration: 1,
+          y: -50,
+          delay: 0.5,
+        });
+      }
+      document
+        .querySelector("a[href='#advantage']")
+        .addEventListener("click", animateAdvantage);
+
+      function animateContact() {
+        gsap.from("#contact", 1, {
+          opacity: 0,
+          duration: 1,
+          y: -50,
+          delay: 0.5,
+        });
+      }
+      document
+        .querySelector("a[href='#contact']")
+        .addEventListener("click", animateContact);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AllTask</title>
+    <link rel="stylesheet" href="/alltask.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <h2><span>Dash</span>board</h2>
+      <div class="user">
+        <ion-icon name="person-circle"></ion-icon>
+        <h3><%= username %></h3>
+      </div>
+    </div>
+    <div class="side-bar">
+      <div class="links">
+        <nav>
+          <ul>
+            <li>
+              <a href="/task">Dashboard</a>
+              <a href="/alltask" class="active"
+                >All Task&nbsp;&nbsp;<span id="allTaskCount"
+                  ><%= allTaskCount %></span
+                ></a
+              >
+              <a href="/completed"
+                >Completed&nbsp;&nbsp;<span id="completedTaskCount"
+                  ><%= completedCount %></span
+                ></a
+              >
+              <a href="/priority"
+                >Priority&nbsp;&nbsp;<span id="completedTaskCount"
+                  ><%= PriorityCount %></span
+                ></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="User">
+      <a href="/logout" class="logout-button"
+        ><ion-icon name="log-out"></ion-icon>Logout</a
+      >
+
+      <button class="theme-toggle">
+        <ion-icon name="moon"></ion-icon>&nbsp;&nbsp;&nbsp;<ion-icon
+          name="sunny"
+        ></ion-icon>
+      </button>
+    </div>
+    <div class="title">
+      <span>All Tasks</span>
+    </div>
+
+    <div class="tasks">
+      <div class="pic">
+        <% if (todos.length === 0) { %>
+        <img src="list-pic.png" alt="List Picture" />
+        <% } %>
+      </div>
+      <ul>
+        <% todos.forEach(todo => { %>
+        <li data-id="<%= todo._id %>">
+          <span style="font-size: 22px"><%= todo.task %></span>
+          &nbsp; Due: <% if (todo.dueDate) { %> <%=
+          todo.dueDate.toLocaleDateString('en-US', { weekday: 'short', year:
+          'numeric', month: 'long', day: 'numeric' }) %> <% } %> &nbsp; <%=
+          todo.priority %> &nbsp; &nbsp; <% if (!todo.completed) { %>&nbsp;
+          &nbsp;
+          <button
+            class="edit"
+            onclick="editTodo('<%= todo._id %>', '<%= todo.task %>', '<%= userId %>')"
+          >
+            <ion-icon name="create"></ion-icon>
+          </button>
+          &nbsp;&nbsp;
+
+          <button
+            class="completed"
+            onclick="markAsCompleted('<%= todo._id %>', '<%= userId %>')"
+          >
+            <ion-icon name="checkmark-circle"></ion-icon></button
+          >&nbsp; &nbsp; <% } else { %>
+          <strike><%= todo.task %></strike>
+          <% } %>&nbsp; &nbsp;
+          <button
+            class="remove"
+            onclick="removeTodo('<%= todo._id %>', '<%= userId %>')"
+          >
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      function markAsCompleted(id, userId) {
+        // Get the task element
+        const taskElement = document.querySelector(`[data-id="${id}"]`);
+
+        // Remove the task element from the list
+        taskElement.remove();
+
+        // Send a request to mark the task as completed in the database
+        fetch("/complete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, userId }),
+        });
+      }
+
+      function removeTodo(id, userId) {
+        fetch("/remove", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id, userId }),
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+
+      const themeToggle = document.querySelector(".theme-toggle");
+      const moonIcon = document.querySelector(
+        '.theme-toggle ion-icon[name="moon"]'
+      );
+      const sunnyIcon = document.querySelector(
+        '.theme-toggle ion-icon[name="sunny"]'
+      );
+
+      themeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark-theme");
+        if (document.body.classList.contains("dark-theme")) {
+          moonIcon.style.display = "inline";
+          sunnyIcon.style.display = "none";
+        } else {
+          moonIcon.style.display = "none";
+          sunnyIcon.style.display = "inline";
+        }
+      });
+
+      function editTodo(id, currentTask, userId) {
+        const updatedTask = prompt("Edit task:", currentTask);
+        if (updatedTask !== null) {
+          fetch("/update", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id, task: updatedTask, userId }),
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
